@@ -274,7 +274,7 @@ window.ALLYPALLY = {
 
   // Anreise – Flugdaten aus den easyJet-Bestätigungen (ohne Buchungscodes, Namen, Preise)
   travel: {
-    title: 'easyJet · Wien → Gatwick → Innsbruck',
+    title: 'Wien → London → Axams',
     flights: [
       {
         label: 'Hinflug · Freitag, 1. Jänner 2027 · EZY8884',
@@ -292,6 +292,14 @@ window.ALLYPALLY = {
     luggage: 'Gepäck: 1 Koffer bis 23 kg (aufgegeben) und jeder 1 kleine Tasche unter dem Vordersitz (max. 45 × 36 × 20 cm).',
     transfers: [
       {
+        title: 'Freitag: Von zu Hause zum Flughafen Wien',
+        steps: [
+          'Gemütlich ausschlafen – es ist ja Neujahr.',
+          'Gegen 11:30 Uhr los: mit dem Taxi ca. 25–30 Minuten, mit den Öffis über den Hauptbahnhof (Railjet oder S-Bahn zum Flughafen) etwas länger.',
+          'Gepäckabgabe bei easyJet von 12:00 bis 13:20, Abflug 14:00.',
+        ],
+      },
+      {
         title: 'Freitag: Von Gatwick ins Hotel',
         steps: [
           'Landung 15:20 im North Terminal. Mit dem kostenlosen Shuttle zum South Terminal – dort ist der Bahnhof.',
@@ -306,7 +314,14 @@ window.ALLYPALLY = {
           'Früh frühstücken und gegen 8 Uhr auschecken.',
           'Zu Fuß nach St Pancras International und mit dem Thameslink direkt bis Gatwick Airport (ca. 45–50 Min.).',
           'Shuttle zum North Terminal – die Gepäckabgabe schließt um 10:30, Abflug 11:30.',
-          'Um 14:30 landen wir in Innsbruck – fast zu Hause.',
+        ],
+      },
+      {
+        title: 'Montag: Von Innsbruck nach Axams',
+        steps: [
+          'Landung 14:30 in Innsbruck – kleiner Flughafen, kurze Wege.',
+          'Nach Axams sind es nur rund 15–20 Minuten mit dem Taxi oder per Abholung.',
+          'Mit den Öffis geht es über Innsbruck mit dem Bus hinauf nach Axams – dauert etwas länger.',
         ],
       },
       {
