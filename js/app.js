@@ -186,6 +186,7 @@
       h('div', { class: 'f-row' }, end(f.from), h('div', { class: 'f-line', 'aria-hidden': 'true' }, '✈'), end(f.to)),
       f.note && h('p', { class: 'muted' }, f.note),
       f.search && h('a', { class: 'btn btn-small btn-outline', href: f.search, target: '_blank', rel: 'noopener' }, '🔎 Flüge bei Google Flights'))));
+    if (cfg.travel.luggage) $('#travel').append(h('p', { class: 'note' }, `🧳 ${cfg.travel.luggage}`));
     $('#travel').append(...(cfg.travel.transfers || []).map((t) => h('div', { class: 'card route' },
       h('h3', {}, t.title), h('ol', {}, t.steps.map((s) => h('li', {}, s))))));
   }

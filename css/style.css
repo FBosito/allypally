@@ -250,7 +250,8 @@ h2, h3 { margin: 0; line-height: 1.25; }
 
 /* Anreise */
 .flight-card .s-date { font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--red); }
-.f-row { display: flex; align-items: center; gap: .5rem; margin: .8rem 0 .6rem; }
+.f-row { display: flex; align-items: flex-start; gap: .5rem; margin: .8rem 0 .6rem; }
+.f-row .f-line { margin-top: 1.9rem; }
 .f-end { display: flex; flex-direction: column; flex: 1; }
 .f-end:last-child { text-align: right; }
 .f-end b { font-size: 1.8rem; line-height: 1; letter-spacing: .02em; }

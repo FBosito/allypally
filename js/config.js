@@ -260,6 +260,9 @@ window.ALLYPALLY = {
   packing: [
     { id: 'pass', text: 'Reisepass – für Großbritannien reicht der Personalausweis nicht' },
     { id: 'eta', text: 'UK-Einreisegenehmigung (ETA) rechtzeitig in der offiziellen UK-ETA-App beantragen' },
+    { id: 'apis', text: 'Passdaten bei easyJet unter „Manage Bookings“ eintragen' },
+    { id: 'checkin', text: 'Online-Check-in ab 2. Dezember in der easyJet-App – Bordkarten aufs Handy' },
+    { id: 'bag', text: 'Koffer max. 23 kg, Handgepäck klein genug für unter den Sitz (45 × 36 × 20 cm)' },
     { id: 'adapter', text: 'Steckdosen-Adapter Typ G' },
     { id: 'card', text: 'Kreditkarte oder Handy zum kontaktlosen Bezahlen – auch für die Öffis' },
     { id: 'warm', text: 'Warme Jacke, Schal und Regenschirm – es ist Jänner in London' },
@@ -269,41 +272,48 @@ window.ALLYPALLY = {
     { id: 'tickets', text: 'Tickets & Buchungsbestätigung am Handy' },
   ],
 
-  // Anreise – sobald fix, ausfüllen; null blendet die Kachel aus
+  // Anreise – Flugdaten aus den easyJet-Bestätigungen (ohne Buchungscodes, Namen, Preise)
   travel: {
-    title: 'Wien → London → Innsbruck',
+    title: 'easyJet · Wien → Gatwick → Innsbruck',
     flights: [
       {
-        label: 'Hinflug · Freitag, 1. Jänner 2027',
-        from: { code: 'VIE', city: 'Wien' },
-        to: { code: 'LON', city: 'London' },
-        note: 'Flugzeit und Londoner Flughafen noch offen.',
-        search: 'https://www.google.com/travel/flights?q=Flights%20from%20Vienna%20to%20London%20on%202027-01-01%20one%20way&hl=de',
+        label: 'Hinflug · Freitag, 1. Jänner 2027 · EZY8884',
+        from: { code: 'VIE', city: 'Wien', time: '14:00' },
+        to: { code: 'LGW', city: 'London Gatwick', time: '15:20', terminal: 'North Terminal' },
+        note: 'Gepäckabgabe 12:00–13:20 · Ortszeiten (London ist 1 Stunde hinter Wien)',
       },
       {
-        label: 'Rückflug · Montag, 4. Jänner 2027',
-        from: { code: 'LON', city: 'London' },
-        to: { code: 'INN', city: 'Innsbruck' },
-        note: 'Flugzeit und Londoner Flughafen noch offen.',
-        search: 'https://www.google.com/travel/flights?q=Flights%20from%20London%20to%20Innsbruck%20on%202027-01-04%20one%20way&hl=de',
+        label: 'Rückflug · Montag, 4. Jänner 2027 · EZY8697',
+        from: { code: 'LGW', city: 'London Gatwick', time: '11:30', terminal: 'North Terminal' },
+        to: { code: 'INN', city: 'Innsbruck', time: '14:30' },
+        note: 'Gepäckabgabe 09:00–10:30 · Ortszeiten',
       },
     ],
+    luggage: 'Gepäck: 1 Koffer bis 23 kg (aufgegeben) und jeder 1 kleine Tasche unter dem Vordersitz (max. 45 × 36 × 20 cm).',
     transfers: [
       {
-        title: 'Vom Flughafen zum Hotel',
+        title: 'Freitag: Von Gatwick ins Hotel',
         steps: [
-          'Heathrow: Piccadilly Line direkt bis King’s Cross St Pancras (ca. 1 Std.) oder Elizabeth Line bis Farringdon.',
-          'Gatwick: Thameslink-Zug direkt bis St Pancras International (ca. 45–50 Min.).',
-          'Luton: Shuttle zum Bahnhof Luton Airport Parkway, dann Thameslink direkt bis St Pancras.',
-          'Stansted: Stansted Express bis Tottenham Hale, dann Victoria Line bis King’s Cross.',
-          'London City: DLR bis Bank, dann Northern Line bis King’s Cross.',
+          'Landung 15:20 im North Terminal. Mit dem kostenlosen Shuttle zum South Terminal – dort ist der Bahnhof.',
+          'Thameslink-Zug direkt bis St Pancras International, ohne Umsteigen, ca. 45–50 Minuten.',
+          'Von St Pancras ca. 10 Minuten zu Fuß zum Hotel – realistisch sind wir gegen 17 Uhr dort.',
+          'Kurz einchecken, frisch machen und gegen 18 Uhr los Richtung Ally Pally – um 19 Uhr startet das Viertelfinale.',
+        ],
+      },
+      {
+        title: 'Montag: Vom Hotel nach Gatwick',
+        steps: [
+          'Früh frühstücken und gegen 8 Uhr auschecken.',
+          'Zu Fuß nach St Pancras International und mit dem Thameslink direkt bis Gatwick Airport (ca. 45–50 Min.).',
+          'Shuttle zum North Terminal – die Gepäckabgabe schließt um 10:30, Abflug 11:30.',
+          'Um 14:30 landen wir in Innsbruck – fast zu Hause.',
         ],
       },
       {
         title: 'Gut zu wissen',
         steps: [
-          'King’s Cross St Pancras ist einer der besten Knotenpunkte Londons – von fast jedem Flughafen geht es ohne viel Umsteigen bis vors Hotel.',
-          'In U-Bahn und Bus zahlt man einfach kontaktlos mit Karte oder Handy. Bei manchen Flughafenzügen braucht man ein eigenes Ticket – das gibt’s am Automaten oder in der App.',
+          'In U-Bahn und Bus zahlt man einfach kontaktlos mit Karte oder Handy. Für den Gatwick-Zug gibt es Tickets auch am Automaten oder in der App.',
+          'Online-Check-in bei easyJet öffnet 30 Tage vor dem Hinflug – also ab 2. Dezember 2026, für beide Flüge.',
         ],
       },
     ],
